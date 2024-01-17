@@ -241,4 +241,41 @@ const pets = [
     }
   ];
 
+pets.forEach(pet => console.log(pet.type));
+
+for (const pet of pets) {
+    console.log(pet.specialSkill);
+}
+
+const targetingApp = document.querySelector("#app");
+
+let domString = "";
+for (const pet of pets) {
+
+  domString += `<div class="card" style="width: 18rem;">
+  <img src=${pet.imageUrl} class="card-img-top" alt=${pet.name}>
+  <div class="card-body">
+    <h5 class="card-title">${pet.name}</h5>
+    <p class="card-text">${pet.specialSkill}></ p> 
+    <p class="card-text">${pet.color}</p
+  </div>
+</div>`;
+};
+
+targetingApp.innerHTML = domString;
+
+document.getElementById("").addEventListener("click, ");
+
+document.getElementById("").addEventListener("click, ");
+
+document.getElementById("").addEventListener("click, ");
+
+
+
+
+
+
+
+
+
   
