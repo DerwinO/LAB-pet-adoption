@@ -1,8 +1,29 @@
 body {
-  background-color: blue;
-  width: 400px;
+  
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 #app {
   
+}
+
+.btn-group {
+
+}
+
+#catsButton {
+  background-color:blue
+}
+
+#dogsButton {
+  background-color: red
+}
+
+#dinosButton {
+  background-color: green
 }

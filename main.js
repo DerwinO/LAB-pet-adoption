@@ -264,18 +264,21 @@ for (const pet of pets) {
 
 targetingApp.innerHTML = domString;
 
-document.getElementById("").addEventListener("click, ");
 
-document.getElementById("").addEventListener("click, ");
+function clickMe() {
+  console.log("Me Owl");
+}
 
-document.getElementById("").addEventListener("click, ");
+function dogMe() {
+  console.log("all dogs go to heaven");
+}
 
+function tRex() {
+  console.log("i have tiny arms");
+}
 
-
-
-
-
-
-
+catsButton.addEventListener("click", clickMe );
+dogsButton.addEventListener("click", dogMe );
+dinosButton.addEventListener("click", tRex );
 
   
