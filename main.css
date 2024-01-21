@@ -1,23 +1,23 @@
-body {
-  
-}
-
-.card {
+#app {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  justify-content: space-around;
 }
 
-#app {
-  
+body {
+  background-color: lightblue
 }
 
-.btn-group {
 
+
+#button-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 #catsButton {
-  background-color:blue
+  background-color: blue
 }
 
 #dogsButton {

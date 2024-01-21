@@ -241,18 +241,21 @@ const pets = [
     }
   ];
 
-pets.forEach(pet => console.log(pet.type));
+  //for loops to loop through array
 
-for (const pet of pets) {
-    console.log(pet.specialSkill);
-}
+//pets.forEach(pet => console.log(pet.type));
 
-const targetingApp = document.querySelector("#app");
+//for (const pet of pets) {
+    //console.log(pet.specialSkill);
+//}
 
-let domString = "";
-for (const pet of pets) {
 
-  domString += `<div class="card" style="width: 18rem;">
+//get the cards on the DOM
+  const cardsOnDom = (pets) => {
+  let domString = "";
+  for (const pet of pets) {
+  
+    domString += `<div class="card" style="width: 18rem;">
   <img src=${pet.imageUrl} class="card-img-top" alt=${pet.name}>
   <div class="card-body">
     <h5 class="card-title">${pet.name}</h5>
@@ -260,25 +263,49 @@ for (const pet of pets) {
     <p class="card-text">${pet.color}</p
   </div>
 </div>`;
+  }
+
+  //Render to DOM utility function
+  const renderToDom = (divId, htmlToRender) => {
+    const selectedDiv = document.querySelector(divId);
+    selectedDiv.innerHTML = htmlToRender;
+  };
+
+renderToDom("#app", domString);
+
 };
 
-targetingApp.innerHTML = domString;
+//target pet buttons on the DOM
+const catsButton = document.querySelector("#catsButton");
+const dogsButton = document.querySelector("#dogsButton");
+const dinosButton = document.querySelector("#dinosButton");
+const allButton = document.querySelector("#allButton");
+
+//Event listeners for the buttons
+
+// cat,dog and dino button Event Listener
+catsButton.addEventListener("click", () => {
+  const blueTeamMembers = filter(team, "blue");
+  cardsOnDom(blueTeamMembers);
+});
+
+dogsButton.addEventListener("click", () => {
+  const blueTeamMembers = filter(team, "blue");
+  cardsOnDom(blueTeamMembers);
+});
+
+dinosButton.addEventListener("click", () => {
+  const dino = filter(pets, "dino");
+  cardsOnDom(dino);
+});
+
+// #allButton event listener
+allButton.addEventListener("click", () => {
+  cardsOnDom(pets);
+});
 
 
-function clickMe() {
-  console.log("Me Owl");
-}
 
-function dogMe() {
-  console.log("all dogs go to heaven");
-}
-
-function tRex() {
-  console.log("i have tiny arms");
-}
-
-catsButton.addEventListener("click", clickMe );
-dogsButton.addEventListener("click", dogMe );
-dinosButton.addEventListener("click", tRex );
+  
 
   
