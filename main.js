@@ -284,25 +284,58 @@ const allButton = document.querySelector("#allButton");
 //Event listeners for the buttons
 
 // cat,dog and dino button Event Listener
-catsButton.addEventListener("click", () => {
-  const blueTeamMembers = filter(team, "blue");
-  cardsOnDom(blueTeamMembers);
+
+catsButton.addEventListener("click", (e) => {
+  if (e.target.id.includes("cat")) {
+    const filterCats = pets.filter((pet) => pet.type === "cat");
+    cardsOnDom(filterCats);
+  }
 });
 
-dogsButton.addEventListener("click", () => {
-  const blueTeamMembers = filter(team, "blue");
-  cardsOnDom(blueTeamMembers);
+dogsButton.addEventListener("click", (e) => {
+  if (e.target.id.includes("dog")) {
+    const filterDogs = pets.filter((pet) => pet.type === "dog");
+    cardsOnDom(filterDogs);
+  }
 });
 
-dinosButton.addEventListener("click", () => {
-  const dino = filter(pets, "dino");
-  cardsOnDom(dino);
+dinosButton.addEventListener("click", (e) => {
+  if (e.target.id.includes("dino")) {
+    const filterDinos = pets.filter((pet) => pet.type === "dino");
+    cardsOnDom(filterDinos);
+  }
 });
 
 // #allButton event listener
 allButton.addEventListener("click", () => {
   cardsOnDom(pets);
 });
+
+//target form on the DOM
+const form = document.querySelector('form');
+
+//function that grabs values from the form
+
+const createNewPet = (e) => {
+  e.preventDefault(); // EVERY TIME YOU CREATE A FORM
+
+  const newMemberObj = {
+    id: pets.length + 1,
+    name: document.querySelector("#name").value,
+    color: document.querySelector("#color").value,
+    specialSkill: document.querySelector("#specialSkill").value,
+    type: document.querySelector("#type").value,
+    image: document.querySelector("#image").value
+  }
+
+  pets.push(createNewPet);
+  cardsOnDom(pets);
+  form.reset();
+}
+
+// 3. Add an event listener for the form submit and pass it the function (callback)
+form.addEventListener('submit', createMember);
+
 
 
 
