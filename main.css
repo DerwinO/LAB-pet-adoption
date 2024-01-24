@@ -1,14 +1,21 @@
 #app {
+  background-color:blueviolet;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-body {
-  background-color: lightblue
+form {
+  background-color: blueviolet;
 }
 
+.card {
+  margin: 10;
+}
 
+body {
+  
+}
 
 #button-group {
   display: flex;
